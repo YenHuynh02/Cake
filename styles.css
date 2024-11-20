@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgb(234, 67, 95), rgb(255, 239, 239));
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.form {
+    background: pink;
+    width: 400px;
+    height: 500px;
+    border-radius: 50px;
+    box-shadow: 10px 10px rgb(146, 117, 117);
+}
