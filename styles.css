@@ -1,3 +1,7 @@
+:root {
+    --maincolor: #efc092;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +17,134 @@ body {
 }
 
 .form {
+    position: relative;
     background: pink;
     width: 400px;
     height: 500px;
     border-radius: 50px;
     box-shadow: 10px 10px rgb(146, 117, 117);
+    z-index: 2;
 }
+
+    .ears {
+        position: absolute;
+        top: -50px;
+        background-color: var(--maincolor);
+        width: 80px;
+        height: 50px;
+        border-radius: 150px 0 150px 0;
+        z-index: 0;
+    }
+
+    .ears:after {
+        content: "";
+        width: 50px;
+        height: 30px;
+        position: absolute;
+        z-index: 0;
+        top: 8px;
+        left: 20px;
+        border-radius: 150px 0 150px 0;
+        transform: rotate(-176deg);
+        background-color: #fee2d2;
+    }
+
+    .ears-left {
+        left: 125px;
+        transform: rotate(-105deg);
+    }
+
+    .ears-right {
+        right: 125px;
+        transform: rotate(-22deg);
+    }
+
+    .dogHead {
+        position: absolute;
+        left: 50%;
+        background: var(--maincolor);
+        width: 100px;
+        height: 90px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .dogHead:before,
+    .dogHead:after {
+        content: '';
+        width: 79px;
+        height: 50px;
+        position: absolute;
+        top: 40px;
+        background-color: var(--maincolor);
+        border-radius: 50%;
+    }
+
+    .dogHead:before {
+        left: -7px;
+        transform: rotate(50deg);
+    }
+
+    .dogHead:after {
+        right: -7px;
+        transform: rotate(-50deg);
+    }
+
+        .eyes {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 50%;
+            top: 45px;
+            left: 23px;
+            z-index: 9999;
+            box-shadow: 33px 0px 0px #000;
+        }
+
+        .circle1 {
+            position: absolute;
+            top: 2px;
+            left: 1px;
+            width: 12px;
+            height: 8px;
+            box-shadow: 21px 25px 0 white;
+            background-color: white;
+            border-radius: 50%;
+            transform: rotate(-50deg);
+            z-index: 9999;
+        }
+
+        .circle2 {
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            background-color: white;
+            width: 5px;
+            height: 3px;
+            box-shadow: 21px 25px 0 white;
+            transform: rotate(-50deg);
+            border-radius: 50%;
+            z-index: 9999;
+        }
+
+        .eyes:after {
+            content: '';
+            width: 82px;
+            height: 40px;
+            background-color: var(--maincolor);
+            position: absolute;
+            top: -45px;
+            left: -14px;
+            border-radius: 50%;
+        }
+        
+        .mouth {
+            position: absolute;
+            top: 20px;
+            left: 170px;
+            width: 60px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #fee2d2;
+        }
