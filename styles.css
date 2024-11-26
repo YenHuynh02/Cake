@@ -276,14 +276,17 @@ body {
                     }
                 }
 
-                .chatbox {
+                #chatbox {
                     position: absolute;
                     top: 70px;
                     left: 0;
-                    width: 100%;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 90%;
                     height: 80px;
                     border-radius: 20px;
+                    border: 2px outset palevioletred;
                     background-color: white;
-                    border: 2px inset pink;
+                    display: none;
                 }
 
