@@ -4,7 +4,9 @@ var startButton = document.getElementById('startButton');
 chatbox.innerHTML = `Hello ${cake}`;
 
 // Scene 1
-startButton.addEventListener('click', () => {
-    chatbox.style.display = 'block';
-    startButton.style.display = 'none';
+['click', 'touchstart'].forEach((event) => {
+    startButton.addEventListener(event, () => {
+        chatbox.style.display = 'block';
+        startButton.style.display = 'none';
+    })
 })
