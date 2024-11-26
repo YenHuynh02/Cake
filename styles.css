@@ -1,5 +1,6 @@
 :root {
     --maincolor: #efc092;
+    --antlerColor: #563107;
 }
 
 * {
@@ -23,17 +24,17 @@ body {
     height: 500px;
     border-radius: 50px;
     box-shadow: 10px 10px rgb(146, 117, 117);
-    z-index: 2;
 }
 
     .ears {
         position: absolute;
-        top: -50px;
+        top: -40px;
         background-color: var(--maincolor);
         width: 80px;
         height: 50px;
         border-radius: 150px 0 150px 0;
         z-index: 0;
+        animation: ears 2s infinite linear;
     }
 
     .ears:after {
@@ -50,16 +51,22 @@ body {
     }
 
     .ears-left {
-        left: 125px;
-        transform: rotate(-105deg);
+        left: 115px;
+        transform: rotate(20deg);
     }
 
     .ears-right {
-        right: 125px;
-        transform: rotate(-22deg);
+        right: 115px;
+        transform: rotate(20deg);
     }
 
-    .dogHead {
+    @keyframes ears {
+        0% {transform: rotate(20deg);}
+        50% {transform: rotate(35deg);}
+        100% {transform: rotate(20deg);}
+    }
+
+    .reindeerHead {
         position: absolute;
         left: 50%;
         background: var(--maincolor);
@@ -69,8 +76,8 @@ body {
         transform: translate(-50%, -50%);
     }
 
-    .dogHead:before,
-    .dogHead:after {
+    .reindeerHead:before,
+    .reindeerHead:after {
         content: '';
         width: 79px;
         height: 50px;
@@ -80,12 +87,12 @@ body {
         border-radius: 50%;
     }
 
-    .dogHead:before {
+    .reindeerHead:before {
         left: -7px;
         transform: rotate(50deg);
     }
 
-    .dogHead:after {
+    .reindeerHead:after {
         right: -7px;
         transform: rotate(-50deg);
     }
@@ -148,3 +155,135 @@ body {
             border-radius: 50%;
             background-color: #fee2d2;
         }
+
+        .nose {
+            position: absolute;
+            top: 20px;
+            left: 195px;
+            background-color: red;
+            width: 15px;
+            height: 10px;
+            border-radius: 50%;
+            z-index: 9999;
+        }
+
+        .antler-inner, .antler-outter {
+            background-color: var(--antlerColor);
+            width: 25px;
+            height: 7px;
+            z-index: 9999;
+            border-radius: 20px;
+        }
+
+            .inner-left {
+                position: absolute;
+                top: -45px;
+                left: 175px;
+                transform: rotate(50deg);
+            
+            }
+
+            .outter-left:before, :is(.inner-left, .outter-left):after {
+                content: '';
+                width: 25px;
+                height: 7px;
+                position: absolute;
+                top: -5px;
+                left: -18px;
+                border-radius: 20px;
+                background-color: var(--antlerColor);
+                transform: rotate(30deg);
+            }
+
+            .inner-right {
+                position: absolute;
+                top: -45px;
+                right: 175px;
+                transform: rotate(-50deg);
+            }
+
+            .outter-right:before, :is(.inner-right, .outter-right):after {
+                content: '';
+                width: 25px;
+                height: 7px;
+                position: absolute;
+                top: -5px;
+                right: -18px;
+                border-radius: 20px;
+                background-color: var(--antlerColor);
+                transform: rotate(-30deg);
+            }
+
+        .antler-outter {
+            width: 50px;
+            z-index: -1;
+        }
+
+            .outter-left {
+                position: absolute;
+                top: -55px;
+                left: 135px;
+                transform: rotate(50deg);
+            }
+
+            .outter-left:before {
+                transform: rotate(50deg) translate(12px,-20px);
+            }
+
+            .outter-right {
+                position: absolute;
+                top: -55px;
+                right: 135px;
+                transform: rotate(-50deg);
+            }
+
+            .outter-right:before {
+                transform: rotate(-50deg) translate(-12px, -20px);
+            }   
+
+            .info {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 400px;
+                height: 500px;
+            }
+
+                button {
+                    font-size: larger;
+                    width: 200px;
+                    height: 150px;
+                    z-index: 9999;
+                    border-radius: 20px;
+                    color: palevioletred;
+                    background-color: white;
+                    border: none;
+                    animation: btn 2s infinite ease;
+                }
+
+                @keyframes btn {
+                    0% {
+                        transform: scale(1.0);
+                    }
+
+                    50% {
+                        transform: scale(1.1);
+                    }
+
+                    100% {
+                        transform: scale(1.0);
+                    }
+                }
+
+                .chatbox {
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    width: 100%;
+                    height: 80px;
+                    border-radius: 20px;
+                    background-color: white;
+                    border: 2px inset pink;
+                }
+
